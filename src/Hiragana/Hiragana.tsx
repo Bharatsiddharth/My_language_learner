@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback, useRef, FC, ReactNode } from "react";
+import { useState, useEffect, useCallback } from "react";
+import type { FC } from "react";
 
 // ============================================================
 // TYPE DEFINITIONS
@@ -409,7 +410,7 @@ interface PageOverviewProps {
   onNavigate: (tab: TabId) => void;
 }
 
-const PageOverview: FC<PageOverviewProps> = ({ scriptId, onNavigate }) => {
+const PageOverview = ({ scriptId }: PageOverviewProps) => {
   const data = SCRIPT_DATA[scriptId];
   const words = data.words;
   const stats = [
@@ -606,7 +607,7 @@ const PageFlash: FC<PageFlashProps> = ({ scriptId }) => {
               )}
             </div>
           )}
-          {!showRom && romMode !== "always" && (
+          {!showRom && romMode === "never" && (
             <div style={{ fontSize: 12, color: "#4a4e63", fontFamily: "'DM Mono', monospace", marginTop: "1.5rem" }}>tap to reveal</div>
           )}
         </div>

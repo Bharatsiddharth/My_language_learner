@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Hiragana from './Hiragana/Hiragana.tsx'
 import './App.css'
 
